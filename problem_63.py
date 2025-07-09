@@ -38,15 +38,13 @@ Your coding mastery will reveal answers to these and many other important questi
 """
 class Journey:
     def __init__(self, obj, crew, balloons):
-        self.obj_weight = obj.get("weight", 0)  # weight of object in kg
+        self.obj_weight = obj.get("weight", 0)
         self.crew = crew
         self.balloons = balloons
 
     def isPossible(self):
-        crew_weight = self.crew * 80  # kg
-        total_weight = self.obj_weight + crew_weight  # kg
+        crew_weight = self.crew * 80
+        total_weight = self.obj_weight + crew_weight
 
-        # Each balloon lifts 4.8 grams = 0.0048 kg
-        total_lift = self.balloons * 0.0048  # kg
-
+        total_lift = self.balloons * 0.0048
         return total_lift >= total_weight
